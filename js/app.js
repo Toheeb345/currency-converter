@@ -28,7 +28,6 @@ function loadFlag(element) {
             let imgTag = element.parentElement.querySelector("img");
             
             imgTag.src = `https://flagsapi.com/${country_code[code]}/flat/64.png`;
-            console.log(country_code[code]);
         }
     }
 }
@@ -56,13 +55,15 @@ function getExchangeRate() {
 
     fetch(url).then(response => response.json()).then(result => {
         let exchangeRate = result.conversion_rates[toCurrency.value];
-        let totalExchangeRate = (amountVal * exchangeRate).toFixed(2);
-
-        exchangeRateTxt.innerText = `${amountVal} ${fromCurrency.value} = ${totalExchangeRate} ${toCurrency.value} `
+        let totalExchangeRate = (amountVal * exchangeRate).toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+    
+        exchangeRateTxt.innerText = `${amountVal} ${fromCurrency.value} = ${totalExchangeRate} ${toCurrency.value} `;
     }).catch(() => {
         exchangeRateTxt.innerText = "Alaye Something don sup o!";
-    })
+    });    
+
 }
+
 
 
 const exchangeIcon = document.querySelector(".icon")
@@ -74,3 +75,4 @@ exchangeIcon.addEventListener("click", () => {
     loadFlag(toCurrency);
     getExchangeRate();
 })
+
