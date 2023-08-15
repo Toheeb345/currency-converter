@@ -12,7 +12,6 @@ body{
     justify-content: center;
     min-height: 100vh;
     background: #222;
-    font-family: 'Dancing Script', cursive;
 }
 .wrapper{
     width: 370px;
@@ -21,9 +20,12 @@ body{
     background: #fff;
 }
 .wrapper header{
-    font-size: 28px;
+    font-size: 38px;
     font-weight: 500;
     text-align: center;
+    font-family: 'Dancing Script', cursive;
+    letter-spacing: 5px;
+
 }
 .wrapper form{
     margin: 40px 0 20px 0;
