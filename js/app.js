@@ -76,3 +76,9 @@ exchangeIcon.addEventListener("click", () => {
     getExchangeRate();
 })
 
+TweenMax.from("header", 2, {
+    opacity: 0,
+    x: -50,
+    ease: Expo.easeInOut,
+    duration: 10
+})
